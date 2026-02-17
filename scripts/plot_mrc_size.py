@@ -30,7 +30,7 @@ def _parse_cachesim_output(output: str):
 
         if "[INFO]" in line[:16]:
             continue
-        if line.startswith("result"):
+        if "cache size" in line and "miss ratio" in line:
             ls = line.split()
             curr_dataname = extract_dataname(ls[0])
             if dataname is None:
